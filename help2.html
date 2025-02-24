@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiderBot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+    body { background-color: #e2e6e9; overflow-y: auto; }
+.side-nav { height: 100%; width: 0; position: fixed; top: 0; left: 0; background-color: #fff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index: 100; }
+.side-nav .logo { text-align: left; margin-left: 20px; margin-bottom: 30px; color: #0d6efd; }
+.side-nav a { display: flex; align-items: center; padding: 10px 20px; text-decoration: none; font-size: 20px; color: #000; transition: 0.3s; }
+.side-nav a i { margin-right: 15px; font-size: 24px; }
+.side-nav a:hover { background-color: #f1f1f1; border-radius: 10px; }
+.side-nav a.active { border-radius: 10px; }
+.close-btn { position: absolute; top: 20px; right: 25px; font-size: 36px; }
+.header { background-color: rgb(75, 173, 212); color: #fff; padding: 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+.header h1 { margin: 0; }
+.nav-tabs { margin-top: 10px; }
+.accordion-button { background-color: #ffffff; color: #333; border-bottom: none; }
+.accordion-button:not(.collapsed) { background-color: transparent; color: #333; }
+.helpcenter { margin-left: 10px; }
+.accordion-button:focus { box-shadow: none; }
+.header img { margin-left: auto; }
+.container { border-radius: 30px; background-color: #ffffff; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 20px; }
+.accordion-item { border: none; margin-bottom: 15px; padding: 10px; border-radius: 10px; }
+.open-btn { background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 px;}
+.accordion-button[aria-expanded="true"]::after { transform: rotate(180deg); }
+.accordion-button.collapsed { background-color: none ; }
+.accordion-button::after {transition: transform 0.3s ease-in-out;}
+.accordion-button:not(.collapsed)::after {transform: rotate(0deg); }
+.accordion-item { border: none; margin-bottom: 15px; padding: 10px; border-radius: 10px; }
+/* For FAQ and Contact Us */.nav-tabs .nav-item .nav-link.active { border-bottom: 4px solid #0d6efd;  font-size: 20px;  font-weight: bold;  color: #000;}
+/*Contact Us colored grey*/.nav-tabs .nav-item .nav-link { font-size: 20px;  color: #6c757d;}
+/* for the bandage logo in the side navigation panel */.bandage_logo {position: relative; margin-left: -5px; margin-top: -25px; transform: scale(1.5);}
+.help-center-nav {
+    display: inline-block;
+    margin-left: 2px; /* Moves the text slightly to the right */
+    background-color: #d3eafd; /* Light blue background */
+    padding: 8px 15px; /* Adjust padding to control the size */
+    border-radius: 15px; /* Rounds the edges */
+    font-weight: bold;
+    width: fit-content; /* Makes the background only as wide as the text */
+}
+
+
+ </style>
+</head>
+
+<body>
+    <div class="header">
+        <button class="open-btn btn" onclick="toggleNav()" aria-label="Open Navigation"><i class="bi bi-arrow-left"></i></button>
+        <h1 class="helpcenter">Help Center</h1>
+        <img src="AiderBo_BANDAGE.png" alt="AiderBot" height="50">
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">×</a>
+        <div class="logo">
+          <h1>AiderBo<img src="logo2.png" alt="" height="30" class="bandage_logo" /></h1>
+        </div>
+        <a href="index.html"><img src="Chat_sid nav img.png" alt="AiderBot Icon" height="24" style="margin-right: 15px;">Chat</a>
+        <div class="active help-center-nav" style="display: flex; align-items: center;">
+            <img src="help_sid nav.png" alt="Help Icon" height="24" style="margin-right: 15px;">Help Center
+        </div>   
+    </div>
+    
+
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item"><a class="nav-link active" href="#">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        <b>What is AiderBot?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse">
+                    <div class="accordion-body">AiderBot is a chatbot designed to assist users with common medical concerns by providing general treatment advice and proven home remedies.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion2">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne2">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" data-bs-parent="#faqAccordion2"><b>Can AiderBot diagnose medical conditions?</b></button>
+                </h2>
+                <div id="collapseOne2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion2">
+                    <div class="accordion-body">No, AiderBot cannot diagnose medical conditions. It offers general information and suggestions but should not replace professional medical consultation.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion3">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne3">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" data-bs-parent="#faqAccordion3"><b> Is the information provided by AiderBot reliable?</b></button>
+                </h2>
+                <div id="collapseOne3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion3">
+                    <div class="accordion-body">AiderBot provides information based on widely recognized medical knowledge and home remedies. However, it is important to verify the information with a healthcare professional for serious concerns.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion4">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne4">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" data-bs-parent="#faqAccordion4"> <b>Can AidrBot help with emergency situations?</b></button>
+                </h2>
+                <div id="collapseOne4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion4">
+                    <div class="accordion-body"> AiderBot is not designed to handle medical emergencies. In case of an emergency, please contact a healthcare professional or dial emergency services immediately.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion5">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne5">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" data-bs-parent="#faqAccordion5"> <b>Does AiderBot provide personalized medical advice?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion5">
+                    <div class="accordion-body">  AiderBot offers general guidance based on the symptoms you describe but does not offer personalized medical advice tailored to your specific health history.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion6">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne6">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne6" data-bs-parent="#faqAccordion6"><b>Can I use AiderBot for children or elderly people?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion6">
+                    <div class="accordion-body"> AiderBot can provide general advice for both children and elderly individuals, but it is crucial to consult a pediatrician or geriatrician for age-specific concerns.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion7">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne7">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne7" data-bs-parent="#faqAccordion7"><b>What should I do if AiderBots’s suggestions don’t work or I feel worse?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion7">
+                    <div class="accordion-body">If the suggestions provided by AiderBot do not improve your condition or if you feel worse, it is essential to consult a healthcare professional.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion8">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne8">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne8" data-bs-parent="#faqAccordion8"><b>How accurate are the home remedies provided by AiderBot?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion8">
+                    <div class="accordion-body">The home remedies provided by AiderBot are based on established practices, but individual responses may vary. It is always best to consult a professional before trying new treatments.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion9">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne9">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne9" data-bs-parent="#faqAccordion9"><b>Can AiderBot help with mental health concerns?</b> 
+                    </button>
+                </h2>
+                <div id="collapseOne9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion9">
+                    <div class="accordion-body">AiderBot can provide general advice on managing stress and anxiety but should not be used as a substitute for professional mental health support.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="accordion" id="faqAccordion10">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne10">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne10" data-bs-parent="#faqAccordion10"><b> How can I report an issue or give feedback on AiderBot?</b>
+                    </button>
+                </h2>
+                <div id="collapseOne10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion10">
+                    <div class="accordion-body">If you experience any issues or have feedback regarding AiderBot, please contact our support team or use the feedback option within the platform.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("sideNav");
+            if (nav.style.width === "250px") {
+                nav.style.width = "0";
+            } else {
+                nav.style.width = "250px";
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

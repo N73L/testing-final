@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiderBot</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body { background-color: #e2e6e9; overflow-y: auto; }
+        .side-nav { height: 100%; width: 0; position: fixed; top: 0; left: 0; background-color: #fff; overflow-x: hidden; transition: 0.5s; padding-top: 60px; z-index: 100; }
+        .side-nav .logo { text-align: left; margin-left: 20px; margin-bottom: 30px; color: #0d6efd; }
+        .side-nav a { display: flex; align-items: center; padding: 10px 20px; text-decoration: none; font-size: 20px; color: #000; transition: 0.3s; }
+        .side-nav a i { margin-right: 15px; font-size: 24px; }
+        .side-nav a:hover { background-color: #f1f1f1; border-radius: 10px; }
+        .side-nav a.active { border-radius: 10px; }
+        .close-btn { position: absolute; top: 20px; right: 25px; font-size: 36px; }
+        .open-btn { background: none; border: none; color: white; font-size: 30px; cursor: pointer; padding: 0 px;}
+        .helpcenter { margin-left: 10px; }
+        .header { background-color: rgb(75, 173, 212); color: #fff; padding: 10px; display: flex; align-items: center; justify-content: space-between; position: relative; }
+        .header h1 { margin: 0; }
+        .nav-tabs { margin-top: 10px; }
+        .nav-tabs .nav-item .nav-link.active { border-bottom: 4px solid #0d6efd; font-size: 20px; font-weight: bold; color: #000; }
+        .nav-tabs .nav-item .nav-link { font-size: 20px; color: #6c757d; }
+        .contact-card { background-color: #fff; border-radius: 30px; padding: 25px; margin: 20px 0; box-shadow: 0 8px 16px rgba(0,0,0,0.1); border-left: 5px solid #e0e0e0; }
+        .contact-card h5 { font-weight: bold; margin-bottom: 10px; font-size: 18px; }
+        .emergency { background-color: #fff; border-left: 5px 5px solid #e0e0e0; }
+        .bandage_logo { position: relative; margin-left: -5px; margin-top: -25px; transform: scale(1.5); }
+        .helpcenter { margin-left: 10px; flex-grow: 1; text-align: left;}
+        .contact-container { 
+        background-color: transparent; 
+        margin-top: 20px; 
+    }
+    .contact-header {
+        text-align: center;
+        font-size: 14px;
+        color: #888;
+        margin-bottom: 20px;
+    }
+    .contact-card p {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    .contact-icon {
+        position: relative;
+        top: -3px; /* Adjust this value as needed */
+    }
+    .contact-icon2 {
+        position: relative;
+        top: -3px; /* Adjust this value as needed */
+    }
+    .help-center-nav {
+    display: inline-block;
+    margin-left: 2px; /* Moves the text slightly to the right */
+    background-color: #d3eafd; /* Light blue background */
+    padding: 8px 15px; /* Adjust padding to control the size */
+    border-radius: 15px; /* Rounds the edges */
+    font-weight: bold;
+    width: fit-content; /* Makes the background only as wide as the text */
+}
+    </style>
+
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <button class="open-btn btn" onclick="toggleNav()" aria-label="Open Navigation"><i class="bi bi-arrow-left"></i></button>
+        <h1 class="helpcenter" class="helpcenter_in_header">Help Center</h1>
+        <img src="AiderBo_BANDAGE.png" alt="AiderBot" height="50">
+    </div>
+
+    <div id="sideNav" class="side-nav">
+        <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">×</a>
+        <div class="logo">
+          <h1>AiderBo<img src="logo2.png" alt="" height="30" class="bandage_logo" /></h1>
+        </div>
+        <a href="index.html"><img src="Chat_sid nav img.png" alt="AiderBot Icon" height="24" style="margin-right: 15px;">Chat</a>
+        <div class="active help-center-nav" style="display: flex; align-items: center;">
+            <img src="help_sid nav.png" alt="Help Icon" height="24" style="margin-right: 15px;">Help Center
+        </div>   
+    </div>
+    
+
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="nav-item"><a class="nav-link" href="help2.html">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link active" href="#">Contact Us</a></li>
+    </ul>
+
+    <div class="container contact-container">
+        <p class="contact-header">You can get in touch with us through below platforms. Our Team will reach out to you as soon as it would be possible.</p>
+        <div class="contact-card">
+            <h5 style="color: #6c757d;">Customer Support</h5>
+            <p><img src="Contact_Number_Icon.png" alt="Phone" height="24" class="contact-icon"><span style="color: #888;">Contact Number</span></p>
+            <p class="Contact_No."><strong>+1 (555) 123-4567</strong></p>
+            <p><img src="Email_Address_Icon.png" alt="Email" height="24" class="contact-icon2"><span style="color: #888;">Email Address</span></p>
+            <p class="Email_Ad"><strong>aiderbothelp@gmail.com</strong></p>
+        </div>
+        <div class="contact-card emergency">
+            <h5 style="color: #6c757d;">Emergency Hotline</h5>
+            <p><img src="Emergency_Hotline_Icon.png" alt="Emergency" height="24" class="emergency-icon"><span style="color: #888;">Philippine Red Cross</span></p>
+            <p class="PRC_No."><strong>+63 2 8790 2300</strong></p>
+            <p><img src="Emergency_Hotline_Icon.png" alt="Emergency" height="24" class="emergency-icon"><span style="color: #888;">Nasugbu Branch</span></p>
+            <p style="margin-left: 10px"><strong>09989509663</strong></p>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("sideNav");
+            if (nav.style.width === "250px") {
+                nav.style.width = "0";
+            } else {
+                nav.style.width = "250px";
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
